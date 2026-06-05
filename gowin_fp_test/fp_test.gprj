@@ -1,0 +1,20 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2AR-18C" pn="GW2AR-LV18QN88C8/I7">gw2ar18c-000</Device>
+    <FileList>
+        <File path="src/fp_add_sub/fp_add_sub.v" type="file.verilog" enable="1"/>
+        <File path="src/fp_comp/fp_comp.v" type="file.verilog" enable="1"/>
+        <File path="src/fp_div/fp_div.v" type="file.verilog" enable="1"/>
+        <File path="src/fp_math_core.sv" type="file.verilog" enable="1"/>
+        <File path="src/fp_mult/fp_mult.v" type="file.verilog" enable="1"/>
+        <File path="src/fp_natural_logarithm/fp_natural_logarithm.v" type="file.verilog" enable="1"/>
+        <File path="src/fp_sqrt/fp_sqrt.v" type="file.verilog" enable="1"/>
+        <File path="src/fp_top.sv" type="file.verilog" enable="1"/>
+        <File path="src/spi_target.sv" type="file.verilog" enable="1"/>
+        <File path="src/fp_test.cst" type="file.cst" enable="1"/>
+        <File path="src/fp_test.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

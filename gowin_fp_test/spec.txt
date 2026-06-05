@@ -1,0 +1,146 @@
+Title: Specification for a Floating Point Test Project (for AI)
+
+Introduction
+
+The task is to create both C code for a Raspberry Pi Zero and Verlog
+for the FPGA on a Tang Nano 20K board.  The goal is to test and
+demonstrate Gowin soft IP blocks for 32-bit floating point operations.
+
+Environments:
+
+The raspberry pi program shall be written in C and built by "make".
+The RPI runs Raspian 11.  The program must be called "fp" and be
+placed in a directory called "c_code".  You will not have direct
+access to the rpi.  I will build and test using C files and a makefile
+that you create.
+
+The verilog will be build using the Gowin IDE on Windows.  You will
+not have direct access to this.  I will create the project, build, and
+test using verilog files that you create and place in a directory
+called "src".  I will set the IDE to assume "system verilog 2017".
+
+Scope of Gowin IP blocks to include in the project:
+
+Directory "user_guides" contains PDF files of user guides for each
+soft IP block we will use.  These include:
+
+   - FP Add Sub (use a single instance for both addition and subtraction, controlled by an op signal.)
+   - FP Mult
+   - FP Div
+   - FP Comp (compare)
+   - FP Sqrt
+
+The Raspberry Pi Program fp:
+
+This program will be interactive and must implement a simple command
+parser that provides the following commands:
+
+  - add arg1 arg2
+
+    Use the FPGA to add arg1 to arg2 and print the result from the FPGA
+
+  - sub arg1 arg2
+
+    Use the FPGA to subtract arg2 from arg1 and print the result from the FPGA
+
+  - mult arg1 arg2
+
+    Use the FPGA to mulitply arg1 and arg2 and print the result from the FPGA
+
+  - div arg1 arg2
+
+    Use the FPGA to divide arg1 by arg2 and print the result from the
+    FPGA.  Do not allow arg2 to be zero.
+
+  - sqrt arg1
+
+    Use the FPGA to compute the sqrt of arg1 and print the result from
+    the FPGA.  Do not allow arg1 to be negative.
+
+  - comp arg1 arg2
+
+   Use the FPGA to compare arg1 and arg2.  Print the result from the FPGA as
+   "equal", "greater than", or "less than".
+
+arg1 and arg2 are standard C 32-bit floats on the RPI.  They are compatible
+with the FP soft IP on the Gowin FPGA.
+
+Communication between the RPI and the FPGA:
+
+I want to use SPI with the following standard signals:
+
+  - MOSI
+  - MISO
+  - SCLK (SPI clock from RPI, max 1 - 2 MHz)
+  - CS (active-low Chip Select from RPI)
+
+SPI Mode: Mode 0 (CPOL=0, CPHA=0).
+Data Endianness: Little-Endian (Least Significant Byte first over SPI).
+
+SPI Transaction Format:
+Transactions consist of 5 bytes:
+  - Byte 0 (Command): Bit 7 = Write(1) / Read(0). Bits 6:0 = Register Address in words (0, 1, 2, or 3).
+  - Bytes 1-4 (Data): 32 bits of little-endian data. For reads, the RPI sends dummy bytes while receiving the result.
+
+The FPGA must implement 4 32-bit registers that the RPI will read and write:
+
+  Word Address 0 (Offset 0x0): Control
+  Word Address 1 (Offset 0x4): Arg1
+  Word Address 2 (Offset 0x8): Arg2
+  Word Address 3 (Offset 0xc): Result
+
+  Control register fields
+    bit 31: reset   (when written reset the FPGA)
+    bit 30: ready   (FPGA is ready for access after a reset or operation)
+    bits 3:0: operation with these encodings
+       0000: nop (do nothing, writing 0 can be ignored)
+       0001: add
+       0002: sub
+       0003: mult
+       0004: div
+       0005: sqrt
+       0006: comp
+       others-- act as nop.
+
+     Writing a non-zero operation field has the side-effect of starting the
+     desired operation. To reset the FPGA without starting an operation, write 0x80000000 (operation = nop).
+     When the operation is complete ready will be high.
+
+  Result register for `comp` operation:
+     0 = Equal
+     1 = Greater Than
+     2 = Less Than
+
+You must write a document that summarizes this programming model and
+how to use it.
+
+Implementation on RPI:
+
+The RPI C program will use the standard Linux `spidev` user-space API.
+Input validation (checking for division by zero or sqrt of negative numbers) must be performed by the C program before issuing SPI commands to the FPGA.
+
+Robustness Requirement:
+The `fp` program must check SPI responses and handle unexpected or garbage data gracefully so that it does not crash if it receives invalid bits. This ensures the program can still run and initiate SPI transactions (for observation with a logic analyzer) even if the FPGA design is incomplete or malfunctioning.
+
+Implementation on FPGA:
+
+A test bench must be provided for the FPGA Verilog code, and it must be able to be compiled and run using `iverilog`. Mock modules for the Gowin IPs should be included in the test bench to allow simulation.
+
+Gowin Soft IP blocks use a fixed delay. Assume it is 4 clock cycles, but this should be configured as a parameter (e.g., localparam).
+
+Top level module signals:
+
+   - sysclk (27 MHz clock generated on FPGA board).
+   - btn1 (use as a reset for the FPGA). The button is high when pressed. We want to use active low resets internally, so it must be inverted.
+   - MOSI
+   - MISO
+   - SCLK (SPI clock from RPI)
+   - CS (chip select from RPI)
+
+All signals will be 3.3V logic.
+
+Notice that the FPGA will be run from the 27 MHz sysclk.  This means
+that the SPI siganls are sampled asynchronously and thus must be
+synchronized.  The verilog must detect rising edges of SCLK and (if
+needed) CS.  SCLK edges can be ignored is CS is not asserted.
+

@@ -1,0 +1,46 @@
+This file contains the syntax of Gowin FP Soft IPs (for use by AI).
+Use with the user guides.  They use a fixed delay.  Assume 4 cycles
+but make this a parameter.
+
+	FP_Add_Sub_Top your_instance_name(
+		.clk(clk), //input clk
+		.rstn(rstn), //input rstn
+		.op(op), //input op, add or sub
+		.data_a(data_a), //input [31:0] data_a
+		.data_b(data_b), //input [31:0] data_b
+		.result(result) //output [31:0] result
+	);
+
+
+	FP_Mult_Top your_instance_name(
+		.clk(clk),
+		.rstn(rst_n),
+		.data_a(args[63:32]),
+		.data_b(args[31:0]),
+		.result(res)
+	);
+
+	FP_Div_Top your_instance_name(
+		.clk(clk), //input clk
+		.rstn(rstn), //input rstn
+		.data_a(data_a), //input [31:0] data_a
+		.data_b(data_b), //input [31:0] data_b
+		.result(result) //output [31:0] result
+	);
+
+	FP_Comp_Top your_instance_name(
+		.clk(clk), //input clk
+		.data_a(data_a), //input [31:0] data_a
+		.data_b(data_b), //input [31:0] data_b
+		.aeb(aeb), //output a equal b
+		.agb(agb), //output a greater than b
+		.rstn(rstn) //input rstn
+	);
+
+	FP_Sqrt_Top your_instance_name(
+		.clk(clk), //input clk
+		.rstn(rstn), //input rstn
+		.data_a(data_a), //input [31:0] data_a
+		.result(result) //output [31:0] result
+	);
+ 
