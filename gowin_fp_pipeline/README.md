@@ -22,4 +22,4 @@ No connections to the FPGA board are needed.  The project uses only buttons and 
 
 ## Running and viewing results
 
-Load the project onto the FPGA.  Start Gowin Analysis Oscilloscope (GAO) and press button 1 on the board to force a reset.  GAO should stop and show you the floating point multiplication block's inputs and output.
+Load the project onto the FPGA.  Start Gowin Analysis Oscilloscope (GAO), press its start icon to await trigger, and press button 1 on the board to force a reset.  GAO should trigger, stop, and show you the floating point multiplication block's inputs and output.
