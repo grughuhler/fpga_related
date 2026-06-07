@@ -1,0 +1,17 @@
+//Copyright (C)2014-2025 Gowin Semiconductor Corporation.
+//All rights reserved. 
+//File Title: Physical Constraints file
+//Tool Version: V1.9.12 (64-bit)
+//Part Number: GW2AR-LV18QN88C8/I7
+//Device: GW2AR-18
+//Device Version: C
+//Created Time: Fri 06 05 22:55:49 2026
+
+IO_LOC "led1" 16;
+IO_PORT "led1" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "led0" 15;
+IO_PORT "led0" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "btn1" 88;
+IO_PORT "btn1" IO_TYPE=LVCMOS33 PULL_MODE=DOWN BANK_VCCIO=3.3;
+IO_LOC "sysclk" 10;
+IO_PORT "sysclk" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;

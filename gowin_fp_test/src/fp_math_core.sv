@@ -6,7 +6,9 @@
 // editted as needed.
 
 module fp_math_core #(
-    parameter DELAY_CYCLES = 4
+    // There are other delays in additon to this...
+    // This is not a high-performance implementation.
+    parameter DELAY_CYCLES = 3
 )(
     input  logic        sysclk,
     input  logic        rstn,

@@ -1,0 +1,25 @@
+{
+ "Device" : "GW1NR-9C",
+ "Files" : [
+  {
+   "Path" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/fp_mult/fp_mult.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/gowin_rpll_9k/gowin_rpll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/top.sv",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+  "include_9k"
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "sysv",
+ "VhdlStd" : "vhdl_93"
+}

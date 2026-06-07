@@ -1,0 +1,38 @@
+[
+ {
+  "InstFile" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/top.sv",
+  "InstLine" : 12,
+  "InstName" : "top",
+  "ModuleFile" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/top.sv",
+  "ModuleLine" : 12,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/top.sv",
+    "InstLine" : 72,
+    "InstName" : "your_instance_name",
+    "ModuleFile" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/gowin_rpll_9k/gowin_rpll.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_rPLL"
+   },
+   {
+    "InstFile" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/top.sv",
+    "InstLine" : 77,
+    "InstName" : "ip_mult",
+    "ModuleFile" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/fp_mult/fp_mult.v",
+    "ModuleLine" : 2544,
+    "ModuleName" : "FP_Mult_Top",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/fp_mult/fp_mult.v",
+      "InstLine" : 2559,
+      "InstName" : "FP_Mult_inst",
+      "ModuleFile" : "C:/Users/spamt/Documents/gowin_projects/fpga_related/gowin_fp_pipeline/src/fp_mult/fp_mult.v",
+      "ModuleLine" : 10,
+      "ModuleName" : "(FP_Mult)/"
+     }
+    ]
+   }
+  ]
+ }
+]

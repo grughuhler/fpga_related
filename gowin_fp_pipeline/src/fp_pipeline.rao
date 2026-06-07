@@ -1,0 +1,213 @@
+<?xml version="1" encoding="UTF-8"?>
+<GAO_CONFIG>
+    <Version>3.0</Version>
+    <Mode>Standard</Mode>
+    <AoCore index="0" sample_clock="clk" trig_type="0" storage_depth="1024" window_num="1" capture_amount="1024" implementation="0" trigger_pos="1" module_name="top" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
+        <SignalList>
+            <Bus capture_enable="true" name="cnt[2:0]">
+                <Signal>cnt[2]</Signal>
+                <Signal>cnt[1]</Signal>
+                <Signal>cnt[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="ip_mult/data_a[31:0]">
+                <Signal>ip_mult/data_a[31]</Signal>
+                <Signal>ip_mult/data_a[30]</Signal>
+                <Signal>ip_mult/data_a[29]</Signal>
+                <Signal>ip_mult/data_a[28]</Signal>
+                <Signal>ip_mult/data_a[27]</Signal>
+                <Signal>ip_mult/data_a[26]</Signal>
+                <Signal>ip_mult/data_a[25]</Signal>
+                <Signal>ip_mult/data_a[24]</Signal>
+                <Signal>ip_mult/data_a[23]</Signal>
+                <Signal>ip_mult/data_a[22]</Signal>
+                <Signal>ip_mult/data_a[21]</Signal>
+                <Signal>ip_mult/data_a[20]</Signal>
+                <Signal>ip_mult/data_a[19]</Signal>
+                <Signal>ip_mult/data_a[18]</Signal>
+                <Signal>ip_mult/data_a[17]</Signal>
+                <Signal>ip_mult/data_a[16]</Signal>
+                <Signal>ip_mult/data_a[15]</Signal>
+                <Signal>ip_mult/data_a[14]</Signal>
+                <Signal>ip_mult/data_a[13]</Signal>
+                <Signal>ip_mult/data_a[12]</Signal>
+                <Signal>ip_mult/data_a[11]</Signal>
+                <Signal>ip_mult/data_a[10]</Signal>
+                <Signal>ip_mult/data_a[9]</Signal>
+                <Signal>ip_mult/data_a[8]</Signal>
+                <Signal>ip_mult/data_a[7]</Signal>
+                <Signal>ip_mult/data_a[6]</Signal>
+                <Signal>ip_mult/data_a[5]</Signal>
+                <Signal>ip_mult/data_a[4]</Signal>
+                <Signal>ip_mult/data_a[3]</Signal>
+                <Signal>ip_mult/data_a[2]</Signal>
+                <Signal>ip_mult/data_a[1]</Signal>
+                <Signal>ip_mult/data_a[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="ip_mult/data_b[31:0]">
+                <Signal>ip_mult/data_b[31]</Signal>
+                <Signal>ip_mult/data_b[30]</Signal>
+                <Signal>ip_mult/data_b[29]</Signal>
+                <Signal>ip_mult/data_b[28]</Signal>
+                <Signal>ip_mult/data_b[27]</Signal>
+                <Signal>ip_mult/data_b[26]</Signal>
+                <Signal>ip_mult/data_b[25]</Signal>
+                <Signal>ip_mult/data_b[24]</Signal>
+                <Signal>ip_mult/data_b[23]</Signal>
+                <Signal>ip_mult/data_b[22]</Signal>
+                <Signal>ip_mult/data_b[21]</Signal>
+                <Signal>ip_mult/data_b[20]</Signal>
+                <Signal>ip_mult/data_b[19]</Signal>
+                <Signal>ip_mult/data_b[18]</Signal>
+                <Signal>ip_mult/data_b[17]</Signal>
+                <Signal>ip_mult/data_b[16]</Signal>
+                <Signal>ip_mult/data_b[15]</Signal>
+                <Signal>ip_mult/data_b[14]</Signal>
+                <Signal>ip_mult/data_b[13]</Signal>
+                <Signal>ip_mult/data_b[12]</Signal>
+                <Signal>ip_mult/data_b[11]</Signal>
+                <Signal>ip_mult/data_b[10]</Signal>
+                <Signal>ip_mult/data_b[9]</Signal>
+                <Signal>ip_mult/data_b[8]</Signal>
+                <Signal>ip_mult/data_b[7]</Signal>
+                <Signal>ip_mult/data_b[6]</Signal>
+                <Signal>ip_mult/data_b[5]</Signal>
+                <Signal>ip_mult/data_b[4]</Signal>
+                <Signal>ip_mult/data_b[3]</Signal>
+                <Signal>ip_mult/data_b[2]</Signal>
+                <Signal>ip_mult/data_b[1]</Signal>
+                <Signal>ip_mult/data_b[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="result[31:0]">
+                <Signal>result[31]</Signal>
+                <Signal>result[30]</Signal>
+                <Signal>result[29]</Signal>
+                <Signal>result[28]</Signal>
+                <Signal>result[27]</Signal>
+                <Signal>result[26]</Signal>
+                <Signal>result[25]</Signal>
+                <Signal>result[24]</Signal>
+                <Signal>result[23]</Signal>
+                <Signal>result[22]</Signal>
+                <Signal>result[21]</Signal>
+                <Signal>result[20]</Signal>
+                <Signal>result[19]</Signal>
+                <Signal>result[18]</Signal>
+                <Signal>result[17]</Signal>
+                <Signal>result[16]</Signal>
+                <Signal>result[15]</Signal>
+                <Signal>result[14]</Signal>
+                <Signal>result[13]</Signal>
+                <Signal>result[12]</Signal>
+                <Signal>result[11]</Signal>
+                <Signal>result[10]</Signal>
+                <Signal>result[9]</Signal>
+                <Signal>result[8]</Signal>
+                <Signal>result[7]</Signal>
+                <Signal>result[6]</Signal>
+                <Signal>result[5]</Signal>
+                <Signal>result[4]</Signal>
+                <Signal>result[3]</Signal>
+                <Signal>result[2]</Signal>
+                <Signal>result[1]</Signal>
+                <Signal>result[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="err_cnt[7:0]">
+                <Signal>err_cnt[7]</Signal>
+                <Signal>err_cnt[6]</Signal>
+                <Signal>err_cnt[5]</Signal>
+                <Signal>err_cnt[4]</Signal>
+                <Signal>err_cnt[3]</Signal>
+                <Signal>err_cnt[2]</Signal>
+                <Signal>err_cnt[1]</Signal>
+                <Signal>err_cnt[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="correct2[31:0]">
+                <Signal>correct2[31]</Signal>
+                <Signal>correct2[30]</Signal>
+                <Signal>correct2[29]</Signal>
+                <Signal>correct2[28]</Signal>
+                <Signal>correct2[27]</Signal>
+                <Signal>correct2[26]</Signal>
+                <Signal>correct2[25]</Signal>
+                <Signal>correct2[24]</Signal>
+                <Signal>correct2[23]</Signal>
+                <Signal>correct2[22]</Signal>
+                <Signal>correct2[21]</Signal>
+                <Signal>correct2[20]</Signal>
+                <Signal>correct2[19]</Signal>
+                <Signal>correct2[18]</Signal>
+                <Signal>correct2[17]</Signal>
+                <Signal>correct2[16]</Signal>
+                <Signal>correct2[15]</Signal>
+                <Signal>correct2[14]</Signal>
+                <Signal>correct2[13]</Signal>
+                <Signal>correct2[12]</Signal>
+                <Signal>correct2[11]</Signal>
+                <Signal>correct2[10]</Signal>
+                <Signal>correct2[9]</Signal>
+                <Signal>correct2[8]</Signal>
+                <Signal>correct2[7]</Signal>
+                <Signal>correct2[6]</Signal>
+                <Signal>correct2[5]</Signal>
+                <Signal>correct2[4]</Signal>
+                <Signal>correct2[3]</Signal>
+                <Signal>correct2[2]</Signal>
+                <Signal>correct2[1]</Signal>
+                <Signal>correct2[0]</Signal>
+            </Bus>
+        </SignalList>
+        <Triggers>
+            <Trigger index="0">
+                <SignalList>
+                    <Bus restorename="err_cnt[7:0]">
+                        <Signal>err_cnt[7]</Signal>
+                        <Signal>err_cnt[6]</Signal>
+                        <Signal>err_cnt[5]</Signal>
+                        <Signal>err_cnt[4]</Signal>
+                        <Signal>err_cnt[3]</Signal>
+                        <Signal>err_cnt[2]</Signal>
+                        <Signal>err_cnt[1]</Signal>
+                        <Signal>err_cnt[0]</Signal>
+                    </Bus>
+                </SignalList>
+            </Trigger>
+            <Trigger index="1"/>
+            <Trigger index="2"/>
+            <Trigger index="3"/>
+            <Trigger index="4"/>
+            <Trigger index="5"/>
+            <Trigger index="6"/>
+            <Trigger index="7"/>
+            <Trigger index="8"/>
+            <Trigger index="9"/>
+            <Trigger index="10"/>
+            <Trigger index="11"/>
+            <Trigger index="12"/>
+            <Trigger index="13"/>
+            <Trigger index="14"/>
+            <Trigger index="15"/>
+        </Triggers>
+        <MatchUnits>
+            <MatchUnit index="0" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="00000001" value1="00000000" trigger="0"/>
+            <MatchUnit index="1" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="2" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="3" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="4" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="5" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="6" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="7" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="8" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="9" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="10" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="11" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="12" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="13" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="14" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="15" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+        </MatchUnits>
+        <Expressions type="Static">
+            <Expression>M0</Expression>
+        </Expressions>
+    </AoCore>
+    <GAO_ID>1010111111100110</GAO_ID>
+</GAO_CONFIG>
